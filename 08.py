@@ -15,3 +15,4 @@ cars.sort(reverse=True)
 print(f'{cars},permanently sorted in reverse order')
 
 print(f'{cars},Lets see !,how is the cars list is arranged over here at fianl step')
+print(len(cars))
