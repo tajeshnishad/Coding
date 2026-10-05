@@ -20,7 +20,8 @@ print(f"Alien is now {alien_1['colour']}")
 
 print("\n")
 
-alien_2={'x_position':0,'y_position':25,'speed':'slow'}
+alien_2={'x_position':0,'y_position':25,'speed':'slow'}    # NOTE : here value of 'speed ' = 'slow' 
+alien_2['speed']='fast'                                    # NOTE : Updated value of 'speed' ='fast'
 print(f"Original Position : {alien_2['x_position']}")
 if alien_2['speed']=='slow':
     x_increament = 1
