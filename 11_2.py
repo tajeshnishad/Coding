@@ -17,6 +17,8 @@ print(favoutrite_languages['kabir'])
 print("\n")
 
 alien_1={'color':'titanium','speed':'slow'}
-# print(alien_1['points'])
-points__value=alien_1.get("points",'No value assigned.')
-print(points__value)
+points_value=alien_1.get("No value assigned")
+print(points_value)
+#        NOTE:            key       default value
+point_value=alien_1.get("points",'no value assigned.')
+print(point_value)
