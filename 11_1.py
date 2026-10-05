@@ -17,3 +17,16 @@ print(f"Alien is now {alien_1['colour']}")
 alien_1['colour']='black'
 print(alien_1)
 print(f"Alien is now {alien_1['colour']}")
+
+print("\n")
+
+alien_2={'x_position':0,'y_position':25,'speed':'slow'}
+print(f"Original Position : {alien_2['x_position']}")
+if alien_2['speed']=='slow':
+    x_increament = 1
+elif alien_2['speed']=='medium':
+    x_increament = 2
+else:
+    x_increament=3
+alien_2 ['x_position']=alien_2['x_position'] + x_increament
+print(f"New position : {alien_2['x_position']}")
