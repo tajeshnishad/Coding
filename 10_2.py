@@ -28,3 +28,4 @@ elif per_age<19:
 else:
     price=40
 print(f"Your admission fees is ${price}.")
+

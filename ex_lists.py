@@ -22,7 +22,7 @@ print("\n")
 #   - Print a second set of invitation messages, one for each person who is 
 #     still in your list.
 guest_list.append('aryan')
-print(f'{guest_list[-1].title()},\nPDA Buddy i recieved a message from Bhumi saying she will not be able to attend so I am invitingu in her , I warmly welcome you and yourr family THANK YOU !')
+print(f'{guest_list[-1].title()},\nPDA Buddy i recieved a message from Bhumi saying she will not be able to attend so I am inviting u in her , I warmly welcome you and your family THANK YOU !')
 print('\n')
 guest_list.remove('bhumi')
 print(guest_list)
@@ -37,15 +37,14 @@ print(f'{guest_list[3].title()}\nHello, buddy you are invited to dinner with you
 # Think of three more guests to invite to dinner.
 #   - Start with your program from Exercise 3-4 or Exercise 3-5. Add a print() 
 #     call to the end of your program, informing people that you found a 
-#     bigger table.
-#   - Use insert() to add one new guest to the beginning of your list.
+#     bigger table.121- Use insert() to add one new guest to the beginning of your list.
 #   - Use insert() to add one new guest to the middle of your list.
 #   - Use append() to add one new guest to the end of your list.
 #   - Print a new set of invitation messages, one for each person in your list.
 print('I found a bigger tblae for dinner')
 guest_list.append('annaya')
 guest_list.insert(0,'shoumik')
-
+print('\n')
 print(guest_list)
 
 print(f'{guest_list[0].title()}\nHello, buddy you are invited to dinner with your family happy greetings, THANK YOU')
