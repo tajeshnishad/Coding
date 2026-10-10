@@ -120,9 +120,8 @@ avg_distance = 0
 for weeks,km_runs in weekly_runs_km.items():
     total_distance = sum(km_runs)
     avg_distance = total_distance/len(km_runs)
-    print(avg_distance)
     if total_distance >= 25.0:
-        print(f"{weeks.title()}: Outstanding training! Total distance: <{total_distance}>km (Avg: <{avg_distance}>km/run)")
+        print(f"{weeks.title()}: Outstanding training! Total distance: <{total_distance:.2f}>km (Avg: <{avg_distance:.2f}>km/run)")
     else:
-        print(f"{weeks.title()}: Training target Pending! Total distance: <{total_distance}>km (Avg: <{avg_distance}>km/run)")
+        print(f"{weeks.title()}: Training target Pending! Total distance: <{total_distance:.2f}>km (Avg: <{avg_distance:.2f}>km/run)")
 
