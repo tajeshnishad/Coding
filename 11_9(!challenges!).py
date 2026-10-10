@@ -96,23 +96,6 @@ print(f"Mechinacal Department offers {len(department_courses['mechanical'])} cor
 
 print("\n")
 
-# 5)Daily Running Distance Log(Data Analysis on Inner Lists)
-weekly_runs_km = {
-    'week_1': [5.2, 6.0, 5.0, 7.5],
-    'week_2': [6.5, 7.0, 8.0, 6.0],
-    'week_3': [4.0, 3.5, 5.0],
-}
-
-# for weeks,km_runs in weekly_runs_km.items():
-#     for week in weeks:
-#         for km_run in km_runs:
-#             km_sum =+ km_run
-#             avg_distance = 0
-#         avg_distance = sum(km_run)/len(week)
-#         print(f"\n{avg_distance}")
-
-print("\n")
-
 # 6) Drone waypoint Flight Path(Nested Loops and Coordinated)
 drone_missions = {
     'alpha_survey': ['Point-A', 'Point-B', 'Base-1'],
@@ -124,3 +107,22 @@ for types,surveys in drone_missions.items():
         print(f"\nMission {types} has {len(surveys)} assigned waypoints:")
         for survey in surveys:
             print(f"{survey.title()}")
+
+print("\n")
+
+# 5)Daily Running Distance Log(Data Analysis on Inner Lists)
+weekly_runs_km = {
+    'week_1': [5.2, 6.0, 5.0, 7.5],
+    'week_2': [6.5, 7.0, 8.0, 6.0],
+    'week_3': [4.0, 3.5, 5.0],
+}
+avg_distance = 0
+for weeks,km_runs in weekly_runs_km.items():
+    total_distance = sum(km_runs)
+    avg_distance = total_distance/len(km_runs)
+    print(avg_distance)
+    if total_distance >= 25.0:
+        print(f"{weeks.title()}: Outstanding training! Total distance: <{total_distance}>km (Avg: <{avg_distance}>km/run)")
+    else:
+        print(f"{weeks.title()}: Training target Pending! Total distance: <{total_distance}>km (Avg: <{avg_distance}>km/run)")
+
