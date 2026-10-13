@@ -1,8 +1,15 @@
-fav_languages = {'anshul' : ['rust','python','c++'],
-                 'naveen' : ['b.pharma','python'],
-                 'kabir' : ['c++','ios','rust']}
-fav_lang = []
-for names,languages in fav_languages.items():
-    for language in languages:
-        fav_lang.append(language)
-print(set(fav_lang))
+# using continue in a loop
+current_count = 0
+while current_count < 10:
+    current_count += 1
+    if current_count % 2 == 0:
+        continue
+    print(current_count)
+
+print("\n")
+
+# Avoiding Infinite Loop 
+x = 1
+while x <= 5:
+    print(x)
+    x += 1
