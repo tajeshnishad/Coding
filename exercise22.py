@@ -1,20 +1,20 @@
 # # 1) Deli
-# sandwich_orders = ['Bombay Masala Grilled Sandwich','Falafel Pita','Caprese','Lobster Roll']
-# finished_orders = []
+sandwich_orders = ['Bombay Masala Grilled Sandwich','Falafel Pita','Caprese','Lobster Roll']
+finished_orders = []
 
-# print(f"Your requested Sandwich's are : ")
-# for sandwi in sandwich_orders:
-#     print(sandwi)
+print(f"Your requested Sandwich's are : ")
+for sandwi in sandwich_orders:
+    print(sandwi)
 
-# while sandwich_orders:
-#     sandwich = sandwich_orders.pop()
-#     finished_orders.append(sandwich)
-#     print(f"Finished your {sandwich.title()} sandwich. Preparing for next one!")
+while sandwich_orders:
+    sandwich = sandwich_orders.pop()
+    finished_orders.append(sandwich)
+    print(f"Finished your {sandwich.title()} sandwich. Preparing for next one!")
 
-# print(f"---Request Compleated---")
-# print("Finishing your order one-by-one plz wait!")
-# for orders in finished_orders:
-#     print(orders.title())
+print(f"---Request Compleated---")
+print("Finishing your order one-by-one plz wait!")
+for orders in finished_orders:
+    print(orders.title())
 
 # 1_1) Taking user input in same 
 sandwich_orders = '\nEnter the sandwich you would like to eat'
