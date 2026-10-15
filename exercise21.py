@@ -31,3 +31,33 @@ while flag :
             print('Ticket price is $15')
         else:
             flag = False
+
+print("\n")
+
+# 3)Using 3 Exits
+prompt = '\nPlease enter the topping you want to put in your pizza'
+prompt += '\nEnter "done" to compleate your order of toppings : '
+toppings = []
+active = True
+while active:
+    topping = input(prompt)
+
+    if topping == 'done':
+        break
+
+    else:
+        toppings.append(topping)
+        if len(toppings) != 4:
+            print(f"You can add more {len(toppings)}/4 ")
+        else :
+                active = False
+for topp in toppings:
+    print(topp.title())
+
+print("\n")
+
+# 4)Infinity
+count = 1
+while count > 0:
+    print(count)
+# NOTE : press ctrl+c to exit the infinity
