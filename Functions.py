@@ -10,4 +10,3 @@ def greet_users(username):
     print(f"Hello {username.title()}!")
 
 greet_users('sunny')
-
