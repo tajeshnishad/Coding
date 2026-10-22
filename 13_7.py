@@ -27,19 +27,19 @@ for completed_design in compleated_models:
     print(completed_design)
 
 # 2)making it using functions
-# def print_model(unprinted_designs,completed_designs):
-#     while unprinted_designs:
-#         current_desgn = unprinted_designs.pop()
-#         print(f"Printing model : {current_desgn.title()}")
-#         completed_designs.append(current_desgn)
+def print_model(unprinted_designs,completed_designs):
+    while unprinted_designs:
+        current_desgn = unprinted_designs.pop()
+        print(f"Printing model : {current_desgn.title()}")
+        completed_designs.append(current_desgn)
 
-# def show_completed_models(completed_designs):
-#     print("\nThe following models have been printed: ")
-#     for competed_model in completed_designs:
-#         print(competed_model.title())
+def show_completed_models(completed_designs):
+    print("\nThe following models have been printed: ")
+    for competed_model in completed_designs:
+        print(competed_model.title())
 
-# unprinted_model = ['phone case','robot pendent','dedecahedron']
-# completed_model = []
+unprinted_model = ['phone case','robot pendent','dedecahedron']
+completed_model = []
 
-# print_model(unprinted_model,completed_model)
-# show_completed_models(completed_model)
+print_model(unprinted_model,completed_model)
+show_completed_models(completed_model)
