@@ -67,3 +67,27 @@ process_queue(pending,finished)
 print("\n")
 summmerize_tasks(finished)
 print(f"Pending list is now: {pending}")
+
+print("\n")
+
+# Challenge 7: Candidate Shortlist Filter
+applicants = [
+    {'name': 'Arjun', 'skill': 'Python'},
+    {'name': 'Riya', 'skill': 'Java'},
+    {'name': 'Karan', 'skill': 'Python'},
+    {'name': 'Neha', 'skill': 'C++'}
+]
+target_skills = 'Python'
+def shortlisted_candidates(applications, target_skill):
+    selected = []
+    for applicant in applications:
+        if applicant['skill'] == target_skill:
+            selected.append(applicant['name'].title())
+    print(f"Shortlisted for Python: {selected}")
+        
+shortlisted_candidates(applicants,target_skills)
+
+print("\n")
+
+# Challenge 8: Server Cluster Configuration
+# def generate_server_config(server_name, ip_address, *flag, port=8080):
