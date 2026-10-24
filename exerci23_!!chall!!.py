@@ -90,4 +90,14 @@ shortlisted_candidates(applicants,target_skills)
 print("\n")
 
 # Challenge 8: Server Cluster Configuration
-# def generate_server_config(server_name, ip_address, *flag, port=8080):
+def generate_server_config(server_name, ip_address, *flag, port=8080):
+    server_config = f"{server_name}@{ip_address}.{port}"
+    config = {
+        'host':{server_config},
+        'active_flag':list(flag),
+        'flg_count':len(flag)
+             }
+    return config
+
+configuration = generate_server_config('Alpha', '192.168.1.1', 'ssl', 'monitoring', 'auto_scale', port=443)
+print(configuration)
