@@ -39,3 +39,46 @@ print(f"Cart left: {cart}")
 print("\n")
 
 # Challenge 4: Pizza Order Summary
+def make_pizza(size,*pizza_info):
+    pizza_info = list(pizza_info)
+    print(f"Making a {size}-inch pizza with the following toppings:")
+    for pizza in pizza_info:
+        print(f"- {pizza}")
+
+make_pizza(12, 'mushrooms', 'peppers', 'extra cheese')
+
+print('\n')
+
+# Challenge 5: Inventory Restock Checker
+
+def check_stock(stocks,threshold = 5):
+    restock_lst = []
+    for key,value in stocks.items():
+        if value <= threshold :
+            restock_lst.append(key)
+    return restock_lst
+
+stock = {'notebooks': 12, 'pens': 3, 'erasers': 1, 'markers': 8}
+restock_list = check_stock(stock, threshold=4)
+print(f"Need to restock: {restock_list}")
+
+print("\n")
+
+# Challenge 6: City Description
+def describe_city(city,country = "India"):
+    print(f"{city.title()} is in {country}")
+
+describe_city('Mumbai')
+describe_city('Raipur')
+describe_city('Tokyo', 'Japan')
+
+print("\n")
+
+# Challenge 7: Safe Message Archiver
+def archive_messages(inboxes):
+    for inbox_ in inboxes:
+        print(f"Archived: {inbox_}")
+
+inbox = ['Hello', 'Meeting at 5', 'Your OTP is 1234']
+archive_messages(inbox[:])
+print(f"Original inbox: {inbox}")
