@@ -4,8 +4,10 @@ processing = []
 def validate_orders(raw_orders, valid_orders):
     for raw_order in raw_orders:
         if raw_order == '' or 'CANCELLED':
-            removed = raw_order.pop()
+            raw_order.pop()
         else:
-            valid__orders.append(raw_order)
+            valid_orders.append(raw_order)
 
-# def tag_priority(orders):
+# def tag_priority(valid_orders):
+#     tagged_order = []
+#     for valid_order in valid_orders:
