@@ -82,3 +82,42 @@ def archive_messages(inboxes):
 inbox = ['Hello', 'Meeting at 5', 'Your OTP is 1234']
 archive_messages(inbox[:])
 print(f"Original inbox: {inbox}")
+
+print("\n")
+
+# Challenge 8: Music Album Builder
+def make_album(artist_name,album_title,num_songs = None,**album):
+    album['artist'] = artist_name
+    album['title'] = album_title
+    album['songs'] = num_songs
+    return album
+
+album1 = make_album('Pink Floyd', 'The Dark Side of the Moon')
+album2 = make_album('A.R. Rahman', 'Rockstar', num_songs=14)
+
+print(album1)
+print(album2)
+
+print("\n")
+
+# Challenge 9: User Registration with Defaults & Metadata
+def create_account(username,account_type = 'standard',**kwargs):
+    kwargs['username'] = username
+    kwargs['account type'] = account_type
+    return kwargs
+
+acc1 = create_account('coder_99', account_type='premium', verified=True, country='India')
+acc2 = create_account('guest_user')
+
+print(acc1)
+print(acc2)
+
+print("\n")
+
+# Challenge 10: Participant Badge Printer
+def print_badges(event_name,*attendees):
+    print(f"Event: {event_name.title()}")
+    for attendee in attendees:
+        print(f"- Attendee: {attendee}")
+
+print_badges('Tech Summit 2026', 'Aarav', 'Simran', 'Rohan')
