@@ -1,6 +1,9 @@
 # Problem 1: Normalized Contact Card 
 def create_contact(first_name,last_name,phone=None,**extra_details):
-    extra_details['name'] = f"{first_name.title()} {last_name.title()}"
+    for key,value in extra_details.items():
+        if isinstance(value, str):
+            extra_details[key] = value.strip()
+    extra_details['name'] = f"{first_name.strip().title()} {last_name.strip().title()}"
     if phone is not None:
         extra_details['phone'] = phone
         info = extra_details
