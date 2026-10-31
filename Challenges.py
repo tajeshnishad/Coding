@@ -45,3 +45,19 @@ order_list = [('pen', 4), ('notebook', 5), ('ruler', 1), ('eraser', 5)]
 report = process_orders(order_list,current_stock)
 print("Report:", report)
 print("Updated Stock:", updated_stock)
+
+print("\n")
+
+# Problem 3: Sensor Outlier Filter 
+def filter_readings(readings,min_value=10,max_value=100):
+    clean_data = []
+    for value in readings:
+        if min_value <= value <= max_value:
+            clean_data.append(value)
+    return clean_data
+
+raw_data = [5, 12, 85, 102, 50, 9, 100]
+clean_data = filter_readings(raw_data, min_value=10, max_value=90)
+
+print("Cleaned:", clean_data)
+print("Original:", raw_data)
