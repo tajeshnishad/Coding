@@ -126,8 +126,6 @@ def word_tally(sentence):
 
     return tally
 
-
-# Test Case
 sample = "Python is great, and Python is simple and fun!"
 result = word_tally(sample)
 print(result)
