@@ -61,3 +61,31 @@ clean_data = filter_readings(raw_data, min_value=10, max_value=90)
 
 print("Cleaned:", clean_data)
 print("Original:", raw_data)
+
+print("\n")
+
+# Problem 4: Dynamic Query String Builder 
+def build_query_url(base_url, *path_segments, **parameters):
+
+    clean_base = base_url.rstrip('/')
+    clean_parts = [segment.strip('/') for segment in path_segments if segment.strip('/')]
+    
+    if clean_parts:
+        url = clean_base + '/' + '/'.join(clean_parts)
+    else:
+        url = clean_base
+
+    if parameters:
+        query_parts = [f"{key}={val}" for key, val in parameters.items()]
+        url += '?' + '&'.join(query_parts)
+
+    return url
+    
+
+url1 = build_query_url("https://api.site.com", "v1", "users", role="admin", active="true")
+url2 = build_query_url("https://api.site.com", "status")
+url3 = build_query_url("https://api.site.com/", "v2", "reports/", sort="asc")
+
+print(url1)
+print(url2)
+print(url3)
