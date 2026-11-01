@@ -65,21 +65,19 @@ print("Original:", raw_data)
 print("\n")
 
 # Problem 4: Dynamic Query String Builder 
-def build_query_url(base_url, *path_segments, **parameters):
+def build_query_url(base_url,*path_segments,**parameters):
+    ulrs = [base_url]
+    for path_segment in path_segments:
+        ulrs.append(f"/{path_segment}")
+    if parameters != None:
+            ulrs.append("?")
+            for key,values in parameters.items():
+                ulrs.append(f"{key}={values}&")
+    current_url = ''
+    for ulr in ulrs:
+        current_url += ulr
 
-    clean_base = base_url.rstrip('/')
-    clean_parts = [segment.strip('/') for segment in path_segments if segment.strip('/')]
-    
-    if clean_parts:
-        url = clean_base + '/' + '/'.join(clean_parts)
-    else:
-        url = clean_base
-
-    if parameters:
-        query_parts = [f"{key}={val}" for key, val in parameters.items()]
-        url += '?' + '&'.join(query_parts)
-
-    return url
+    return current_url
     
 
 url1 = build_query_url("https://api.site.com", "v1", "users", role="admin", active="true")
@@ -89,3 +87,21 @@ url3 = build_query_url("https://api.site.com/", "v2", "reports/", sort="asc")
 print(url1)
 print(url2)
 print(url3)
+
+print("\n")
+
+# Problem 5: Ticket Priority Dispatcher
+def dispatch_queue(unhandeled_tickets,processed_tickets,priority_flag='URGENT'):
+    while unhandeled_tickets:
+        current_ticket = unhandeled_tickets.pop(0)
+        if priority_flag in current_ticket:
+            processed_tickets.append(f"[EXPEDITE] {current_ticket}")
+        else:
+            processed_tickets.append(f"{current_ticket}")
+
+incoming = ['Login issue', 'Server crash (URGENT)', 'Password reset', 'Payment failure (URGENT)']
+completed = []
+dispatch_queue(incoming, completed)
+
+print("Incoming remaining:", incoming)
+print("Completed queue:", completed)
