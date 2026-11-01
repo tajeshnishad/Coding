@@ -105,3 +105,29 @@ dispatch_queue(incoming, completed)
 
 print("Incoming remaining:", incoming)
 print("Completed queue:", completed)
+
+print("\n")
+
+# Problem 6: Word Frequency Analyzer 
+def word_tally(sentence):
+    
+    clean_sentence = sentence.lower()
+    for char in [".", ",", "!"]:
+        clean_sentence = clean_sentence.replace(char, "")
+ 
+    words = clean_sentence.split()
+
+    tally = {}
+    for word in words:
+        if word in tally:
+            tally[word] += 1
+        else:
+            tally[word] = 1
+
+    return tally
+
+
+# Test Case
+sample = "Python is great, and Python is simple and fun!"
+result = word_tally(sample)
+print(result)
