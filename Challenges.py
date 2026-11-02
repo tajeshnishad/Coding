@@ -129,3 +129,24 @@ def word_tally(sentence):
 sample = "Python is great, and Python is simple and fun!"
 result = word_tally(sample)
 print(result)
+
+print("\n")
+
+# Problem 7: Multi-Level Student Score Aggregator
+
+def grade_summary(grade_thresholds ,**student_scores):
+    student_data = {}
+    data = {}
+    for students_name,scores in student_scores.items():
+        for grades,values in grade_thresholds.items():
+            grade_thresholds['F'] = 0
+            if scores >= values:
+                print(scores,grades,students_name)
+                student_data[students_name.title()] = f"score:{scores}, grade:{grades.upper()}"
+                break
+    return student_data 
+
+cutoffs = {'A': 90, 'B': 75, 'C': 50}
+
+report = grade_summary(cutoffs, Rahul=92, Sneha=78, Amit=45, Priya=88)
+print(report)
