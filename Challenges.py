@@ -188,3 +188,41 @@ updated_inventory, out_of_stock = audit_warehouse(
 
 print("Updated Inventory:", updated_inventory)
 print("Out of Stock:", out_of_stock)
+
+print("\n")
+
+# Challenge 9: Argument Order Trap
+def register_player(name,team='Free Agent'):
+    player = f"{name.title()} joins {team.title()}"
+    return player
+
+p1 = register_player('Leo', 'Tigers')
+p2 = register_player(name='Leo', team='Tigers')
+
+print(p1)
+print(p2)
+
+print("\n")
+
+# Problem 10: Variable Arguments Type Inspector
+def configure_device(device_id, *flags, mode='active'):
+
+    confgured_id = (device_id,type(flags),mode)
+    return confgured_id
+    
+
+result = configure_device('D101', 'wifi', 'bluetooth')
+print(result)
+
+print("\n")
+
+# Challenge 11: Empty Arbitrary Arguments Counter
+def make_sandwich(*ingredients):
+    count = 0
+    for ingdient in ingredients:
+        count += 1
+
+    return count
+
+total = make_sandwich()
+print("Total ingredients:", total)
