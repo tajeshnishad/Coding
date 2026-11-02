@@ -150,3 +150,41 @@ cutoffs = {'A': 90, 'B': 75, 'C': 50}
 
 report = grade_summary(cutoffs, Rahul=92, Sneha=78, Amit=45, Priya=88)
 print(report)
+
+print("\n")
+
+# Problem 8: Nested Inventory Auditor
+def audit_warehouse(current_stock,*dmaged_items,**replacements):
+    
+    for damaged_item in dmaged_items:
+        if damaged_item in current_stock:
+            current_stock[damaged_item] -= 1
+
+    out_of_stock = []
+    for c_key,c_value in current_stock.items():
+            if current_stock[c_key] == 0 :
+                out_of_stock.append(c_key)
+    
+    for key,value in replacements.items():
+            
+            if key in current_stock:
+                current_stock[key] += value
+
+    current_stock[key]=value
+
+    return current_stock,out_of_stock
+   
+         
+
+
+stock = {'laptop': 5, 'mouse': 1, 'monitor': 4, 'cable': 0}
+
+updated_inventory, out_of_stock = audit_warehouse(
+    stock,
+    'mouse', 'monitor', 'dock',
+    laptop=3,
+    keyboard=12
+)
+
+print("Updated Inventory:", updated_inventory)
+print("Out of Stock:", out_of_stock)
