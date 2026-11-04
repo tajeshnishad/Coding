@@ -57,12 +57,12 @@ class Users:
         self.l_name = last_name
 
     def user_profile(self,usernme,email,location):
-        self.usename = usernme
+        self.username = usernme
         self.email = email
         self.location = location
 
     def describe_user(self):
-        return f"User Profile:\n\tName: {self.f_name.title()} {self.l_name.title()}\n\tUsername: {self.usename}\n\tEmail: {self.email}\n\tLocation: {self.location.title()}\nWelcome back, {self.f_name.title()}!\n"
+        return f"User Profile:\n\tName: {self.f_name.title()} {self.l_name.title()}\n\tUsername: {self.username}\n\tEmail: {self.email}\n\tLocation: {self.location.title()}\nWelcome back, {self.f_name.title()}!\n"
 
 user_1 = Users('alex','hunter')
 user_1.user_profile('ahunter99','alex@example.com','berline')
