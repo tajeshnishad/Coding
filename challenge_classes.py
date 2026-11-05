@@ -74,20 +74,24 @@ print(gamer_2.invite_to_party('Nitro'))
 print("\n")
 
 class Workout:
-    def __init__(self,exercise_name,set,reps,weight_kg):
+    def __init__(self,exercise_name,sets,reps,weight_kg):
         self.exercise_name = exercise_name
-        self.set = set
+        self.sets = sets
         self.reps = reps
         self.weight_kg = weight_kg
 
     def get_exercise_details(self):
         return (f"\nExercise: {self.exercise_name.title()}"
-                f" | Routine: {self.set} sets X {self.reps} reps @ {self.weight_kg} kg")
+                f" | Routine: {self.sets} sets X {self.reps} reps @ {self.weight_kg} kg")
 
     def total_volume(self):
-        volume = {self.set}*{self.reps}*{self.weight_kg}
-        return f"Total Volume Lifted: {self.set}*{self.reps}*{self.weight_kg} kg"
+        volume = self.sets*self.reps*self.weight_kg
+        return f"Total Volume Lifted: {volume} kg"
 
 workout_1 = Workout('benchpress',4,8,70)
 print(workout_1.get_exercise_details())
 print(workout_1.total_volume())
+
+workout_2 = Workout('barbell squat',3,10,90)
+print(workout_2.get_exercise_details())
+print(workout_2.total_volume())
