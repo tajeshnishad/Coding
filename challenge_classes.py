@@ -46,7 +46,7 @@ print(flight_2.flight_announcement_status('delayed'))
 print("\n")
 
 # Challenge 3: Gamer Profile
-class Gamerprofile:
+class GamerProfile:
     def __init__(self,gamer_tag,favourite_game,rank,hours_played):
         self.gamer_tag = gamer_tag
         self.favourite_game = favourite_game
@@ -63,10 +63,31 @@ class Gamerprofile:
     def invite_to_party(self,host_name):
         return(f"{self.gamer_tag} was invited to a party by {host_name}!")
 
-gamer_1 = Gamerprofile('ShadowStrike','valorent','diamond',450)
+gamer_1 = GamerProfile('ShadowStrike','valorent','diamond',450)
 print(gamer_1.show_profile())
 print(gamer_1.invite_to_party('Phoenix'))
 
-gamer_2 = Gamerprofile('SpeedDemon','Forza horizen 5','Master',180)
+gamer_2 = GamerProfile('SpeedDemon','Forza horizen 5','Master',180)
 print(gamer_2.show_profile())
 print(gamer_2.invite_to_party('Nitro'))
+
+print("\n")
+
+class Workout:
+    def __init__(self,exercise_name,set,reps,weight_kg):
+        self.exercise_name = exercise_name
+        self.set = set
+        self.reps = reps
+        self.weight_kg = weight_kg
+
+    def get_exercise_details(self):
+        return (f"\nExercise: {self.exercise_name.title()}"
+                f" | Routine: {self.set} sets X {self.reps} reps @ {self.weight_kg} kg")
+
+    def total_volume(self):
+        volume = {self.set}*{self.reps}*{self.weight_kg}
+        return f"Total Volume Lifted: {self.set}*{self.reps}*{self.weight_kg} kg"
+
+workout_1 = Workout('benchpress',4,8,70)
+print(workout_1.get_exercise_details())
+print(workout_1.total_volume())
