@@ -80,3 +80,47 @@ shop.increment_orders_completed(15)
 print(f"Orders completed: {shop.orders_completed}")
 shop.set_orders_completed(20)
 shop.increment_orders_completed(-5)
+
+print("\n")
+
+# Login Attempts
+class Users:
+    def __init__(self,first_name,last_name,user_id,email,location):
+        self.first_name = first_name
+        self.last_name = last_name
+        self.email = email
+        self.location = location
+        self.user_id = user_id
+        self.login_attempts = 0
+
+    def describe_user(self):
+        print(f"\nFirst name: {self.first_name.title()}\n"
+              f"Last name: {self.last_name.title()}\n"
+              f"Email id: {self.email}\n"
+              f"Location: {self.location.title()}")
+
+    def greet_users(self):
+        print(f"Hello!! \nWelcome back {self.first_name.title()} {self.last_name.title()}")
+
+    def increment_login_attempts(self,attempts):
+        if attempts > self.login_attempts:
+            self.login_attempts += attempts
+        print(f"Login attempts of {self.first_name.title()} {self.last_name.title()} is {self.login_attempts}")
+
+    def reset_login_attempt(self):
+        if self.login_attempts >= 1:
+            self.login_attempts = 0
+        print(f"Login attempt has been reset to {self.login_attempts}")
+
+user1 = Users('alex', 'hunter', 'ahunter99', 'alex@example.com', 'berlin')
+user2 = Users('maya', 'lin', 'mlin_dev', 'maya@example.com', 'tokyo')
+
+user1.describe_user()
+user1.greet_users()
+user1.increment_login_attempts(1)
+user1.reset_login_attempt()
+
+user2.describe_user()
+user2.greet_users()
+user2.increment_login_attempts(4)
+user2.reset_login_attempt()
