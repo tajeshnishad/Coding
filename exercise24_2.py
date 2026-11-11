@@ -80,3 +80,48 @@ user_1 = Admin('vaibhav','nishad','vaibhav2005@gmail.com',9493830981,'Chhattisga
 print(user_1.describe_info())
 user_1.greet_user()
 user_1.show_privileges('can add post', 'can delete post', 'can ban user', 'can modify settings')
+
+# 9-8 Privileges
+class User:
+    def __init__(self,first_name,last_name,email,ph_number,location):
+        self.f_name = first_name
+        self.l_name = last_name
+        self.email = email
+        self.ph_number = ph_number
+        self.location = location
+        self.login_attempts = 0
+
+    def describe_info(self):
+        print(f"User Info:")
+        return(f"-Full name: {self.f_name.title()} {self.l_name.title()}"
+               f"\n-E mail: {self.email}"
+               f"\n-Phone: {self.ph_number}"
+               f"\n-Location: {self.location.title()}")
+
+    def greet_user(self):
+        print(f"Hello! Welcome back {self.f_name} {self.l_name}")
+
+    def increment_login_attempts(self):
+        self.login_attempts +=1
+        print(f"Login attempts is: {self.login_attempts}")
+        
+
+    def reset_value(self):
+        self.login_attempts = 0
+        print(f"Login attempts have been reset to {self.login_attempts}")
+
+class Admin(User):
+    def __init__(self,first_name,last_name,email,ph_number,location):
+        super().__init__(first_name,last_name,email,ph_number,location)
+
+class Privileges:
+    def __init__(self,*privileges):
+        self.privilege = privileges
+        print(f"\nAdministrative Privileges are:")
+        for privelege in self.privilege:
+            print(f"{privelege.title()}")
+
+user_1 = Admin('vaibhav','nishad','vaibhav2005@gmail.com',9493830981,'Chhattisgarh')
+print(user_1.describe_info())
+user_1.greet_user()
+user_1 = Privileges('can add post', 'can delete post', 'can ban user', 'can modify settings')
