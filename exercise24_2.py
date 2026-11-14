@@ -125,3 +125,16 @@ user_1 = Admin('vaibhav','nishad','vaibhav2005@gmail.com',9493830981,'Chhattisga
 print(user_1.describe_info())
 user_1.greet_user()
 user_1 = Privileges('can add post', 'can delete post', 'can ban user', 'can modify settings')
+
+print("\n")
+
+# 9-9 Battery Upgrade
+class Car:
+    def __init__(self,make,model,year):
+        self.make = make
+        self.model = model
+        self.year = year
+        odometer_reading = 0
+
+    def get_descriptive_name(self):
+        return f"{self.year}"

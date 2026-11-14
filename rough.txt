@@ -1,0 +1,12 @@
+# 1. Create a list of flavors
+my_flavors = ['vanilla', 'chocolate', 'mango', 'butterscotch']
+
+# 2. Make an instance of the child class
+ice_cream_stand = IceCreamStand('cool scoops', my_flavors)
+
+# 3. Call inherited methods (from Restaurant)
+ice_cream_stand.describe_restaurant()
+ice_cream_stand.open_restaurant()
+
+# 4. Call the child's own method (from IceCreamStand)
+ice_cream_stand.display_flavors()
