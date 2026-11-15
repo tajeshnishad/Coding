@@ -134,7 +134,53 @@ class Car:
         self.make = make
         self.model = model
         self.year = year
-        odometer_reading = 0
+        self.odometer_reading = 0
 
     def get_descriptive_name(self):
-        return f"{self.year}"
+        return f"{self.year} {self.make.title()} {self.model.title()}"
+
+    def read_odometer(self):
+        print(f"This car has {self.odometer_reading} miles on it.")
+
+class Battery:
+    def __init__(self,battery_size = 40):
+        self.battery_size = battery_size
+
+    def describe_battery(self):
+        print(f"This car has a {self.battery_size}-kwh battery.")
+
+    def get_range(self):
+        if self.battery_size == 40:
+            self.range = 150
+            print(f"This car can go about {self.range} miles on a full charge.")
+
+        elif self.battery_size == 65:
+            self.range = 225
+            print(f"This car can go about {self.range} miles on a full charge.")
+
+    def upgrade_battery(self):
+        if self.battery_size != 65:
+            self.battery_size = 65
+            print(f"Upgraded the battery to 65 kwh")
+        elif self.battery_size == 65:
+            print(f"The battery is already upgraded to 65 kwh!")
+
+class ElectricCar(Car):
+    def __init__(self,make,model,year):
+        super().__init__(make,model,year)
+        self.battery = Battery()
+
+my_ev = ElectricCar('tata','nexon ev',2024)
+print(my_ev.get_descriptive_name())
+
+my_ev.battery.describe_battery()
+my_ev.battery.get_range()
+
+print(f"\nupgrading the battery...")
+my_ev.battery.upgrade_battery()
+
+my_ev.battery.describe_battery()
+my_ev.battery.get_range()
+
+print(f"\nTrying to upgrade again...")
+my_ev.battery.upgrade_battery()
