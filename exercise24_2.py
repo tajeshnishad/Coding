@@ -162,6 +162,7 @@ class Battery:
         if self.battery_size != 65:
             self.battery_size = 65
             print(f"Upgraded the battery to 65 kwh")
+            
         elif self.battery_size == 65:
             print(f"The battery is already upgraded to 65 kwh!")
 
@@ -183,4 +184,4 @@ my_ev.battery.describe_battery()
 my_ev.battery.get_range()
 
 print(f"\nTrying to upgrade again...")
-my_ev.battery.upgrade_battery()
+my_ev.battery.upgrade_battery() 
