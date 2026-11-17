@@ -21,7 +21,8 @@ class Car:
             print("You can'y roll back yor odometer!")
 
     def increament_odometer(self,miles):
-        self.odometer_reading += miles
+        self.odometer += miles
+        print(f"These car's odometer has {self.odometer} miles on it.")
 
 class Battery:
     def __init__(self,battery_size = 40):

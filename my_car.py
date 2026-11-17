@@ -19,3 +19,11 @@ my_ev.battery.battery_size = 40
 my_ev.battery.get_range()
 
 print("\n") 
+
+# Importing an Entire Module 
+import car
+my_defender = car.Car('land-rover','defender',2026)
+print(my_defender.get_descriptive_name())
+my_defender.readodometer()
+my_defender.update_odometer(78)
+my_defender.increament_odometer(24)
