@@ -27,3 +27,8 @@ print(my_defender.get_descriptive_name())
 my_defender.readodometer()
 my_defender.update_odometer(78)
 my_defender.increament_odometer(24)
+
+print("\n")
+
+# Importing all classes from a modlue 
+from car import *
